@@ -31,7 +31,7 @@ to_rub2({Currency, Amount}) when is_integer(Amount), Amount > 0 ->
       lari ->
         Amount * 29;
       peso ->
-        Amount *3;
+        Amount * 3;
       krone ->
         Amount * 10;
       Error ->
@@ -58,13 +58,13 @@ to_rub3(Arg) ->
       {ok, 80 * Amount};
     {lari, Amount} when is_integer(Amount), Amount > 0 ->
       io:format("Convert ~p to rub, amount ~p~n", [lari, Amount]),
-      {ok, 75.5 * Amount};
+      {ok, 29 * Amount};
     {peso, Amount} when is_integer(Amount), Amount > 0 ->
       io:format("Convert ~p to rub, amount ~p~n", [peso, Amount]),
-      {ok, 75.5 * Amount};
+      {ok, 3 * Amount};
     {krone, Amount} when is_integer(Amount), Amount > 0 ->
       io:format("Convert ~p to rub, amount ~p~n", [krone, Amount]),
-      {ok, 75.5 * Amount};
+      {ok, 10 * Amount};
     Error ->
       io:format("Can’t convert to rub, error ~p~n", [Error]),
       {error, badarg}
